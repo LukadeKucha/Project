@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" href="./img/logo.png" type="image/gif" sizes="16x16">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>CALC</title>
+</head>
+
+<!-- <body style="background-color: #cecece; #4486bb"> -->
+
+<body style="background-color: #e1e1e1;">
+    <div id="loader"></div>
+    <section class="hero-section" id="hero-section">
+        <header>
+            <div class="navbar-wrapper">
+                <nav class="navbar-content">
+                    <a href="./" class="logo"><img style="height: 4.5rem;" src="./img/logo.png"></a>
+                    <ul class="nav-links">
+                        <li><a class="txtchange" href="#">მთავარი</a></li>
+                        <li><a class="txtchange" href="#project">პროექტები</a></li>
+                        <li><a class="txtchange" href="#about">ჩვენს შესახებ</a></li>
+                        <li><a class="txtchange" href="#contact">კონტაქტი</a></li>
+                    </ul>
+                    <i class='bx bx-menu' id="burger"></i>
+                </nav>
+            </div>
+        </header>
+        <div class="sliderimage" style="background-image: url(./img/photo1.jfif); opacity: 0;"></div>
+        <div class="sliderimage" style="background-image: url(./img/photo2.jfif); opacity: 1;"></div>
+        <div class="header-overlay_x">
+            <!-- <ul id="ul" onmouseover="myStopFunction()" onmouseout="myFunction()">
+        <li onclick="changeSlider(this)" data-items="1" style="background-color: rgb(251, 255, 140);"></li>
+        <li onclick="changeSlider(this)" data-items="0" style="background-color: rgb(255, 255, 255);"></li>
+        <div class="aroow-left" onclick="forward()">
+          <i class='bx bx-right-arrow-alt'></i>
+        </div>
+        <div class="aroow-right" onclick="back()">
+          <i class='bx bx-left-arrow-alt'></i>
+        </div>
+      </ul> -->
+
+            <div class="header_text">
+                <div class="hero-text">
+                    <div class="hero-main-text aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200"
+                        data-aos-delay="800" data-aos-easing="ease">
+                        <div class="main-title">რაღაც ტექსტი <br>
+                            <p style="font-size:2rem">რაღაც ტექსტი </p>
+                        </div><br>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- კალკულატორი -->
+
+    <section id="project">
+        <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="150" data-aos-easing="ease"
+            class="title aos-init aos-animate">დათვალე</div>
+        <div class="project_border">
+            <div class="pro">
+                <!-- თეთრი კარკასი -->
+                <div class="project aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200" data-aos-easing="ease">
+                    <div class="project_1" style="background-image: url('./img/Dighomi/Project-Dighomi.jpg')">
+                        <div class="project-color">
+                            <div class="Ongoing_project">
+                                თეთრი კარკასი
+                            </div>
+                            <ul class="project-button">
+                                <li>
+                                    თეთრი კარკასი
+                                </li>
+                                <li></li>
+                                <li>
+                                    <a href="./pages/project-dighomi/apartment/">
+                                        კალკულატორი
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- შავი კარკასი -->
+                <div class="project aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200" data-aos-easing="ease">
+                    <div class="project_1" style="background-image: url('./img/Ortachala/project-ortachala.png')">
+                        <div class="project-color">
+                            <div class="Ongoing_project">
+                                შავი კარკასი
+                            </div>
+                            <ul class="project-button">
+                                <li>შავი კარკასი</li>
+                                <li></li>
+                                <li>
+                                    <a href="./pages/project-2/apartment/">
+                                        კალკულატორი
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="about-image " style="background-image: url('./img/Dighomi/banner-2.png');">
+            <div class="image_color">
+
+                <div class="company ">
+                    <img src="./img/logo.png">
+                    <div class="company_text ">
+                        დეველოპერული <br> კომპანია
+                        </b></b></div><b><b>
+                        </b></b>
+                </div><b><b>
+                    </b></b>
+            </div><b><b>
+                </b></b>
+        </div><b><b>
+                <div class="about-text_1 ">
+                    <div class="color-white_1">
+                        <br>
+                        <pre>ჩვენს შესახებ</pre>
+                        <div style="height: 20px;">
+                        </div>
+                        <p>
+                            დეველოპერული კომპანია ენენ ჯგუფი ფუნქციონირებს 2008 წლიდან და ითვლის ათეულობით მსხვილ
+                            პროექტს. ამ ხნის
+                            განმავლობაში კომპანიის ზრდა მიმდინარეობს წარმატებით, რაც მიმდინარე თუ დასრულებული
+                            მშენებლობებით
+                            დასტურდება.
+                            <br>
+                            გთავაზობთ:
+                            <br>
+                            • თქვენზე მორგებულ პირობებს
+                            <br>
+                            • საბანკო გარანტიას
+                            <br>
+                            • საერთაშორისო სტანდარტებით განხორციელებულ მშენებლობას
+                            <br>
+                            • მაღალ ხარისხს
+                            <br>
+                            • მაქსიმალურ უსაფრთხოებასა და კომფორტს
+                        </p>
+                    </div>
+                </div>
+    </section>
+    <div class="title">გალერეა</div>
+    <section id="gallery">
+
+        <div class="gallery-container">
+
+            <div class="gallery-item" data-index="1">
+
+                <img src="./img/photo1.jfif">
+            </div>
+            <div class="gallery-item" data-index="2">
+                <img src="./img/photo1.jfif">
+
+            </div>
+            <div class="gallery-item" data-index="3">
+                <img src="./img/photo1.jfif">
+            </div>
+            <div class="gallery-item" data-index="4">
+                <img src="./img/photo2.jfif">
+            </div>
+            <div class="gallery-item" data-index="5">
+                <img src="./img/photo2.jfif">
+            </div>
+            <div class="gallery-item" data-index="6">
+                <img src="./img/photo2.jfif">
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+
+
+    <script>
+
+        let menuarrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < menuarrow.length; i++) {
+            menuarrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        AOS.init();
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
