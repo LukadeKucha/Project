@@ -20,7 +20,7 @@
     <title>Project</title>
 </head>
 
-<body style="background-color: #e1e1e1;">
+<body style="background-color: #F5F5F5;">
     <div id="loader"></div>
     <section class="hero-section" id="hero-section">
         <header>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- შავი კარკასი -->
                 <div class="project aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200" data-aos-easing="ease">
@@ -118,15 +118,38 @@
             </div>
         </div>
     </section>
- <!-- -------------------------popup------------------------------ -->
-<!-- Log In form -->
-<div class="form-main-container back" id="form-main-container">
-     
-    <form action="" class="log-in-form" id="form">
-        <h1 style="color:red" class="closebtn">DAMACHIRE MAZOLZE</h1> 
-    </form>
-</div>
-<!-- -------------------------popup end----------------------------- -->
+
+
+    <div class="popup">
+        <div class="popup-content">
+            <i style="cursor: pointer; font-size: 36px;" class='close bx bx-x-circle'></i>
+          <h2>კალკულატორი</h2>
+          <form>
+            <label for="input-number">შეიყვანეთ კვადრატულობა:</label>
+            <input placeholder="კვ.მ" type="number" id="input-number" name="input-number">
+            <br>
+            <button type="button" id="submit-btn">გამოთვლა</button>
+          </form>
+          <table id="product-table">
+            <thead>
+              <tr>
+                <th>პროდუქტი</th>
+                <th>ფასი</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">ჯამი:</td>
+                <td id="total">0 GEL</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+
     <!-- About -->
     <section id="about">
         <div class="about-image " style="background-image: url('./img/Dighomi/banner-2.png');">
