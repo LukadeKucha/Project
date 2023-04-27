@@ -304,3 +304,62 @@ function closeLightBox() {
     }
 }
 lightBoxContainer.addEventListener("click", closeLightBox);
+
+
+
+
+
+// popup
+// const viewBtn = document.querySelector(".view-modal"),
+// popup = document.querySelector(".popup"),
+// close = popup.querySelector(".close"),
+// field = popup.querySelector(".field"),
+// input = field.querySelector("input"),
+// copy = field.querySelector("button");
+
+// viewBtn.onclick = ()=>{
+//   popup.classList.toggle("show");
+// }
+// close.onclick = ()=>{
+//   viewBtn.click();
+// }
+
+// copy.onclick = ()=>{
+//   input.select(); //select input value
+//   if(document.execCommand("copy")){ //if the selected text copy
+//     field.classList.add("active");
+//     copy.innerText = "Copied";
+//     setTimeout(()=>{
+//       window.getSelection().removeAllRanges(); //remove selection from document
+//       field.classList.remove("active");
+//       copy.innerText = "Copy";
+//     }, 3000);
+//   }
+// }
+
+const modal = document.querySelector(".view-modal")
+const modal1 = document.querySelector(".view-modal1")
+const formContainer = document.querySelector(".form-main-container");
+const closebtn = document.querySelector('.closebtn')
+modal.addEventListener("click", function () {
+    console.log('asdasd')
+    formContainer.style.setProperty("display", "flex", "important")
+    sidebar.style.zIndex= "-1"
+    formContainer.style.zIndex = "99999" 
+  
+});
+
+closebtn.addEventListener("click",function(){
+    formContainer.style.setProperty("display", "none", "important")
+})
+
+
+
+modal1.addEventListener("click", function () {
+    console.log('asdasd')
+    formContainer.style.setProperty("display", "flex", "important")
+    sidebar.style.zIndex= "-1"
+    formContainer.style.zIndex = "99999" 
+  
+});
+ 
