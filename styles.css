@@ -362,7 +362,8 @@ section {
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  background-image: linear-gradient(rgb(73 114 151 / 41%), rgb(255 255 255 / 0%));
+  /* background-image: linear-gradient(rgb(73 114 151 / 41%), rgb(255 255 255 / 0%)); */
+  background-color: #c6dbe1;
 
 }
 
