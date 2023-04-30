@@ -21,7 +21,7 @@
     <title>Project</title>
 </head>
 
-<body style="background-color: #e1e1e1;">
+<body style="background-color: #F5F5F5;">
     <div id="loader"></div>
     <section class="hero-section" id="hero-section">
         <header>
@@ -87,7 +87,7 @@
                                 </li>
                                 <li></li>
                                 <li>
-                                    <a href="./pages/project-dighomi/apartment/">
+                                    <a class="view-modal">
                                         კალკულატორი
                                     </a>
                                 </li>
@@ -108,7 +108,7 @@
                                 <li>შავი კარკასი</li>
                                 <li></li>
                                 <li>
-                                    <a href="./pages/project-2/apartment/">
+                                    <a class="view-modal1">
                                         კალკულატორი
                                     </a>
                                 </li>
@@ -119,6 +119,37 @@
             </div>
         </div>
     </section>
+
+
+    <div class="popup">
+        <div class="popup-content">
+            <i style="cursor: pointer; font-size: 36px;" class='close bx bx-x-circle'></i>
+          <h2>კალკულატორი</h2>
+          <form>
+            <label for="input-number">შეიყვანეთ კვადრატულობა:</label>
+            <input placeholder="კვ.მ" type="number" id="input-number" name="input-number">
+            <br>
+            <button type="button" id="submit-btn">გამოთვლა</button>
+          </form>
+          <table id="product-table">
+            <thead>
+              <tr>
+                <th>პროდუქტი</th>
+                <th>ფასი</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">ჯამი:</td>
+                <td id="total">0 GEL</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
 
     <!-- About -->
     <section id="about">
