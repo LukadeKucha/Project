@@ -354,16 +354,16 @@ function generateTableRow(product, price, rowNumber) {
     tr.innerHTML = `
     <td>${product} ${rowNumber}</td>
     <td class="price">${price} GEL</td>
-    <td><button class="disable">გამორთვა</button></td>
+    <td><button class="disable">გაუქმება</button></td>
   `;
     const disableBtn = tr.querySelector('.disable');
     disableBtn.addEventListener('click', () => {
         tr.classList.toggle('disabled');
         if (tr.classList.contains('disabled')) {
-            disableBtn.textContent = 'ჩართვა';
+            disableBtn.textContent = 'დამატება';
             disableBtn.style.backgroundColor = '#4CAF50';
         } else {
-            disableBtn.textContent = 'გამორთვა';
+            disableBtn.textContent = 'გაუქმება';
             disableBtn.style.backgroundColor = '';
         }
         // recalculate total
@@ -399,3 +399,4 @@ submitBtn.addEventListener('click', () => {
     // update total
     total.textContent = `${totalSum} GEL`;
 });
+console.log(productTable.firstChild);
