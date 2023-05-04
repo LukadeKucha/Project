@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        .activate-btn {
+            background-color: green;
+            color: white;
+        }
+
+        .deactivate-btn {
+            background-color: red;
+            color: white;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            width: 80%;
+            height: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .popup-content .form {
+            margin-top: 20px;
+        }
+
+        .popup-content label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .popup-content input {
+            width: 10%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .popup-content button[type="submit"],
+        .popup-content button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .popup-content button[type="submit"]:hover,
+        .popup-content button[type="button"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .popup-content table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .popup-content th,
+        .popup-content td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .popup-content th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .popup-content .disable {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .popup-content .disable:hover {
+            background-color: #d32f2f;
+        }
+
+        .popup-content .disable.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .popup-content #total {
+            font-weight: bold;
+        }
+
+        .popup-content .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f44336;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .popup-content .close:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="popup">
+        <div class="popup-content">
+            <i style="cursor: pointer; font-size: 36px;" class='close bx bx-x-circle'></i>
+            <h2>კალკულატორი</h2>
+            <div class="form">
+                <label for="number-input">შეიყვანეთ თქვენი ბინის კვადრატულობა:</label>
+                <input type="number" id="number-input" name="input-number" placeholder="კვ.მ">
+                <button type="button" id="submit-btn">გამოთვლა</button>
+            </div>
+
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Product title</th>
+                        <th>Product price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 3</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 4</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 5</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 6</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 7</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 8</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 9</td>
+                        <td>$<span class="product-price">0</span></td>
+                        <td><button  type="button" id="myButton" class="activate-btn">Activate</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total Sum:</td>
+                        <td>$<span id="total-sum">0</span></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script>
+
+        // Get elements from DOM
+        const numberInput = document.getElementById('number-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const productTable = document.getElementById('product-table');
+        const activateBtns = document.getElementsByClassName('activate-btn');
+        const productPrices = document.getElementsByClassName('product-price');
+        const totalSum = document.getElementById('total-sum');
+
+        // Initialize product prices array
+        const productPricesArr = [120, 70, 50, 90, 150, 150, 150, 150, 150];
+
+        // Initialize total sum
+        let currentTotalSum = 0;
+
+        // Add event listener to submit button
+        submitBtn.addEventListener('click', () => {
+            const enteredNumber = Number(numberInput.value);
+
+            // Calculate product prices
+            for (let i = 0; i < productPricesArr.length; i++) {
+                const productPrice = productPricesArr[i] * enteredNumber;
+                productPrices[i].textContent = productPrice;
+            }
+
+            // Reset total sum and activate buttons
+            currentTotalSum = 0;
+            totalSum.textContent = currentTotalSum;
+            for (let i = 0; i < activateBtns.length; i++) {
+                activateBtns[i].textContent = 'Activate';
+                activateBtns[i].disabled = false;
+            }
+
+        });
+
+        // Add event listeners to activate buttons
+        for (let i = 0; i < activateBtns.length; i++) {
+            activateBtns[i].addEventListener('click', () => {
+                const productPrice = Number(productPrices[i].textContent);
+                const btnText = activateBtns[i].textContent;
+
+                if (btnText === 'Activate') {
+                    activateBtns[i].style.backgroundColor = "red";
+                    activateBtns[i].textContent = 'Deactivate';
+                    currentTotalSum += productPrice;
+                    totalSum.textContent = currentTotalSum;
+                } else {
+                    activateBtns[i].style.backgroundColor = "green";
+                    activateBtns[i].textContent = 'Activate';
+                    currentTotalSum -= productPrice;
+                    totalSum.textContent = currentTotalSum;
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

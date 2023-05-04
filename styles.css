@@ -5,6 +5,7 @@ body {
 * {
   scroll-behavior: smooth;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -56,7 +57,7 @@ header {
 
 
 .navbar-wrapper.bg-color-change {
-background-color: #ffff;
+  background-color: #ffff;
   /* background-color: #425a78; */
 }
 
@@ -1812,13 +1813,22 @@ ul {
 .footer-menu li a {
   font-size: 14px;
   color: #878787;
-} 
+}
 
 
 
 
 
 /* Popup */
+.activate-btn {
+  background-color: green;
+  color: white;
+}
+
+.deactivate-btn {
+  background-color: red;
+  color: white;
+}
 
 .popup {
   position: fixed;
@@ -1829,47 +1839,48 @@ ul {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999;
   display: none;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   width: 80%;
-  height: 80%;
+  height: auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .popup-content h2 {
+}
+
+.popup-content h2 {
   margin-top: 0;
   font-size: 24px;
   font-weight: bold;
-  }
-  
-  .popup-content form {
+}
+
+.popup-content .form {
   margin-top: 20px;
-  }
-  
-  .popup-content label {
+}
+
+.popup-content label {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
-  }
-  
-  .popup-content input {
+}
+
+.popup-content input {
   width: 10%;
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 16px;
-  }
-  
-  .popup-content button[type="submit"], .popup-content button[type="button"] {
+}
+
+.popup-content button[type="submit"],
+.popup-content button[type="button"] {
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -1878,31 +1889,32 @@ ul {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.2s ease-in-out;
-  }
-  
-  .popup-content button[type="submit"]:hover, .popup-content button[type="button"]:hover {
+}
+
+.popup-content button[type="submit"]:hover,
+.popup-content button[type="button"]:hover {
   background-color: #3e8e41;
-  }
-  
-  .popup-content table {
+}
+
+.popup-content table {
   margin-top: 20px;
   width: 100%;
   border-collapse: collapse;
-  }
-  
-  .popup-content th,
-  .popup-content td {
+}
+
+.popup-content th,
+.popup-content td {
   padding: 10px;
   border: 1px solid #ddd;
   font-size: 16px;
-  }
-  
-  .popup-content th {
+}
+
+.popup-content th {
   background-color: #f2f2f2;
   font-weight: bold;
-  }
-  
-  .popup-content .disable {
+}
+
+.popup-content .disable {
   background-color: #f44336;
   color: white;
   border: none;
@@ -1910,22 +1922,22 @@ ul {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.2s ease-in-out;
-  }
-  
-  .popup-content .disable:hover {
+}
+
+.popup-content .disable:hover {
   background-color: #d32f2f;
-  }
-  
-  .popup-content .disable.disabled {
+}
+
+.popup-content .disable.disabled {
   background-color: #ccc;
   cursor: not-allowed;
-  }
-  
-  .popup-content #total {
+}
+
+.popup-content #total {
   font-weight: bold;
-  }
-  
-  .popup-content .close {
+}
+
+.popup-content .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1934,8 +1946,8 @@ ul {
   color: #f44336;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  }
-  
-  .popup-content .close:hover {
+}
+
+.popup-content .close:hover {
   transform: scale(1.2);
-  }
+}

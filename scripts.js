@@ -212,22 +212,22 @@ burger.addEventListener('click', () => {
 // Navbar color change
 const txt = document.querySelectorAll('header .navbar-wrapper .navbar-content .nav-links li a');
 const navbar = document.querySelector('.navbar-wrapper');
-const projectsection = document.getElementById('project-hero');
-window.addEventListener('scroll', function () {
-    if (window.scrollY > projectsection.offsetTop) {
-        navbar.classList.add('bg-color-change');
-        txt.classList.add('txt-color-change');
-    }
-    else {
-        txt.classList.remove('txt-color-change');
-        navbar.classList.remove('bg-color-change');
-    }
-})
+// window.addEventListener('scroll', function () {
+//     if (window.scrollY > projectsection.offsetTop) {
+//         navbar.classList.add('bg-color-change');
+//         txt.classList.add('txt-color-change');
+//     }
+//     else {
+//         txt.classList.remove('txt-color-change');
+//         navbar.classList.remove('bg-color-change');
+//     }
+// })
 
 const section = document.getElementById('project');
 
 window.addEventListener('scroll', function () {
     if (window.scrollY > section.offsetTop) {
+        txt.classList.add('txt-color-change');
         navbar.classList.add('bg-color-change');
     }
     else {
@@ -314,17 +314,15 @@ const closeBtn = document.querySelector('.close');
 const viewModalBtn = document.querySelector('.view-modal1');
 
 // get form elements
-const inputNumber = document.querySelector('#input-number');
-const submitBtn = document.querySelector('#submit-btn');
-const productTable = document.querySelector('#product-table tbody');
+const inputNumber = document.querySelector('#number-input');
 const total = document.querySelector('#total');
 
 inputNumber.addEventListener('keydown', (event) => {
     if (event.keyCode === 13) {
-    event.preventDefault();
-    submitBtn.click();
+        event.preventDefault();
+        submitBtn.click();
     }
-    });
+});
 
 // open popup when view modal button is clicked
 viewModalBtn.addEventListener('click', () => {
@@ -343,60 +341,55 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// function to calculate product price
-function calculatePrice(number, multiplier) {
-    return number * multiplier;
-}
+const numberInput = document.getElementById('number-input');
+const submitBtn = document.getElementById('submit-btn');
+const productTable = document.getElementById('product-table');
+const activateBtns = document.getElementsByClassName('activate-btn');
+const productPrices = document.getElementsByClassName('product-price');
+const totalSum = document.getElementById('total-sum');
 
-// function to generate table row
-function generateTableRow(product, price, rowNumber) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-    <td>${product} ${rowNumber}</td>
-    <td class="price">${price} GEL</td>
-    <td><button class="disable">გაუქმება</button></td>
-  `;
-    const disableBtn = tr.querySelector('.disable');
-    disableBtn.addEventListener('click', () => {
-        tr.classList.toggle('disabled');
-        if (tr.classList.contains('disabled')) {
-            disableBtn.textContent = 'დამატება';
-            disableBtn.style.backgroundColor = '#4CAF50';
-        } else {
-            disableBtn.textContent = 'გაუქმება';
-            disableBtn.style.backgroundColor = '';
-        }
-        // recalculate total
-        let totalSum = 0;
-        const rows = productTable.querySelectorAll('tr:not(:first-child)');
-        rows.forEach((row) => {
-            if (!row.classList.contains('disabled')) {
-                const priceCell = row.querySelector('.price');
-                const price = parseFloat(priceCell.textContent);
-                totalSum += price;
-            }
-        });
-        total.textContent = `${totalSum} GEL`;
-    });
-    return tr;
-}
+// Initialize product prices array
+const productPricesArr = [120, 70, 50, 90, 150, 150, 150, 150, 150];
 
-// generate table rows when user submits form
+// Initialize total sum
+let currentTotalSum = 0;
+
+// Add event listener to submit button
 submitBtn.addEventListener('click', () => {
-    // remove existing table rows
-    while (productTable.firstChild) {
-        productTable.removeChild(productTable.firstChild);
+    const enteredNumber = Number(numberInput.value);
+
+    // Calculate product prices
+    for (let i = 0; i < productPricesArr.length; i++) {
+        const productPrice = productPricesArr[i] * enteredNumber;
+        productPrices[i].textContent = productPrice;
     }
-    // calculate and generate new table rows
-    let totalSum = 0;
-    for (let i = 1; i <= 8; i++) {
-        const product = 'პროდუქტი';
-        const price = calculatePrice(inputNumber.value, i);
-        const tr = generateTableRow(product, price, i);
-        productTable.appendChild(tr);
-        totalSum += price;
+
+    // Reset total sum and activate buttons
+    currentTotalSum = 0;
+    totalSum.textContent = currentTotalSum;
+    for (let i = 0; i < activateBtns.length; i++) {
+        activateBtns[i].textContent = 'დამატება';
+        activateBtns[i].disabled = false;
     }
-    // update total
-    total.textContent = `${totalSum} GEL`;
+
 });
-console.log(productTable.firstChild);
+
+// Add event listeners to activate buttons
+for (let i = 0; i < activateBtns.length; i++) {
+    activateBtns[i].addEventListener('click', () => {
+        const productPrice = Number(productPrices[i].textContent);
+        const btnText = activateBtns[i].textContent;
+
+        if (btnText === 'დამატება') {
+            activateBtns[i].style.backgroundColor = "red";
+            activateBtns[i].textContent = 'გამოკლება';
+            currentTotalSum += productPrice;
+            totalSum.textContent = currentTotalSum;
+        } else {
+            activateBtns[i].style.backgroundColor = "green";
+            activateBtns[i].textContent = 'დამატება';
+            currentTotalSum -= productPrice;
+            totalSum.textContent = currentTotalSum;
+        }
+    });
+}
