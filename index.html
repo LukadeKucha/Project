@@ -95,7 +95,7 @@
                                 </li>
                                 <li></li>
                                 <li>
-                                    <a class="view-modal">
+                                    <a class="view-modal2">
                                         კალკულატორი
                                     </a>
                                 </li>
@@ -128,7 +128,7 @@
         </div>
     </section>
 
-
+<!-- შავი კარკასი -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <i style="cursor: pointer; font-size: 36px;" class='close bx bx-x-circle'></i>
@@ -150,48 +150,48 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>პროდუქტი 1</td>
+                        <td>ელექტროობა</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 2</td>
+                        <td>სანტექნიკა</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 3</td>
+                        <td>იატაკის მოჭიმვა</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 4</td>
+                        <td>კედლების გალესვა</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 5</td>
+                        <td>კაფელ-მეტლახი</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 6</td>
+                        <td>ჭერი</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 7</td>
+                        <td>მალიარკა</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 8</td>
+                        <td>პარკეტი</td>
                         <td><span class="product-price">0</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                     <tr>
-                        <td>პროდუქტი 9</td>
-                        <td><span class="product-price">0</span> ლარი </td>
+                        <td>დასუფთავება</td>
+                        <td><span class="product-price">500</span> ლარი </td>
                         <td><button type="button" id="myButton" class="activate-btn">დამატება</button></td>
                     </tr>
                 </tbody>
@@ -199,6 +199,65 @@
                     <tr>
                         <td>ჯამი:</td>
                         <td><span id="total-sum">0</span> ლარი </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <!-- თეთრი კარკასი -->
+
+    <div id="popup2" class="popup2">
+        <div class="popup-content">
+            <i style="cursor: pointer; font-size: 36px;" class='close2 bx bx-x-circle'></i>
+            <h2>კალკულატორი</h2>
+            <div class="form">
+                <label for="number-input">შეიყვანეთ თქვენი ბინის კვადრატულობა:</label>
+                <input type="number" id="number-input2" name="input-number" placeholder="კვ.მ">
+                <br>
+                <button type="button" id="submit-btn2">გამოთვლა</button>
+            </div>
+
+            <table id="product-table2">
+                <thead>
+                    <tr>
+                        <th>სერვისი</th>
+                        <th>ფასი</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>კაფელ-მეტლახი</td>
+                        <td><span class="product-price2">0</span> ლარი </td>
+                        <td><button type="button" id="myButton2" class="activate-btn2">დამატება</button></td>
+                    </tr>
+                    <tr>
+                        <td>ჭერი</td>
+                        <td><span class="product-price2">0</span> ლარი </td>
+                        <td><button type="button" id="myButton2" class="activate-btn2">დამატება</button></td>
+                    </tr>
+                    <tr>
+                        <td>მალიარკა</td>
+                        <td><span class="product-price2">0</span> ლარი </td>
+                        <td><button type="button" id="myButton2" class="activate-btn2">დამატება</button></td>
+                    </tr>
+                    <tr>
+                        <td>პარკეტი</td>
+                        <td><span class="product-price2">0</span> ლარი </td>
+                        <td><button type="button" id="myButton2" class="activate-btn2">დამატება</button></td>
+                    </tr>
+                    <tr>
+                        <td>დასუფთავება</td>
+                        <td><span class="product-price2">500</span> ლარი </td>
+                        <td><button type="button" id="myButton2" class="activate-btn2">დამატება</button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>ჯამი:</td>
+                        <td><span id="total-sum2">0</span> ლარი </td>
                         <td></td>
                     </tr>
                 </tfoot>

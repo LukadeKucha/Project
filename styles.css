@@ -1830,7 +1830,7 @@ ul {
   color: white;
 }
 
-.popup {
+.popup , .popup2 {
   position: fixed;
   top: 0;
   left: 0;
@@ -1933,11 +1933,9 @@ ul {
   cursor: not-allowed;
 }
 
-.popup-content #total {
-  font-weight: bold;
-}
 
-.popup-content .close {
+
+.popup-content .close , .popup-content .close2 {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1948,6 +1946,6 @@ ul {
   transition: all 0.2s ease-in-out;
 }
 
-.popup-content .close:hover {
+.popup-content .close:hover , .popup-content .close2:hover  {
   transform: scale(1.2);
 }

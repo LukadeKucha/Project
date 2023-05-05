@@ -306,7 +306,7 @@ function closeLightBox() {
 lightBoxContainer.addEventListener("click", closeLightBox);
 
 
-// POPUP
+// POPUP შავი კარკასი
 
 // get popup elements
 const popup = document.querySelector('.popup');
@@ -315,7 +315,7 @@ const viewModalBtn = document.querySelector('.view-modal1');
 
 // get form elements
 const inputNumber = document.querySelector('#number-input');
-const total = document.querySelector('#total');
+
 
 inputNumber.addEventListener('keydown', (event) => {
     if (event.keyCode === 13) {
@@ -349,7 +349,7 @@ const productPrices = document.getElementsByClassName('product-price');
 const totalSum = document.getElementById('total-sum');
 
 // Initialize product prices array
-const productPricesArr = [120, 70, 50, 90, 150, 150, 150, 150, 150];
+const productPricesArr = [10, 40, 15, 15, 40, 15, 18, 40];
 
 // Initialize total sum
 let currentTotalSum = 0;
@@ -390,6 +390,94 @@ for (let i = 0; i < activateBtns.length; i++) {
             activateBtns[i].textContent = 'დამატება';
             currentTotalSum -= productPrice;
             totalSum.textContent = currentTotalSum;
+        }
+    });
+}
+
+// Popup თეთრი კარკასი
+ 
+// get popup elements
+const popup2 = document.querySelector('.popup2');
+const closeBtn2 = document.querySelector('.close2');
+const viewModalBtn2 = document.querySelector('.view-modal2');
+
+// get form elements
+const inputNumber2 = document.querySelector('#number-input2');
+
+
+inputNumber2.addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        submitBtn2.click();
+    }
+});
+
+// open popup when view modal button is clicked
+viewModalBtn2.addEventListener('click', () => {
+    popup2.style.display = 'block';
+});
+
+// close popup when close button is clicked
+closeBtn2.addEventListener('click', () => {
+    popup2.style.display = 'none';
+});
+
+// close popup when user clicks outside of it
+window.addEventListener('click', (e) => {
+    if (e.target == popup2) {
+        popup2.style.display = 'none';
+    }
+});
+
+const numberInput2 = document.getElementById('number-input2');
+const submitBtn2 = document.getElementById('submit-btn2');
+const productTable2 = document.getElementById('product-table2');
+const activateBtns2 = document.getElementsByClassName('activate-btn2');
+const productPrices2 = document.getElementsByClassName('product-price2');
+const totalSum2 = document.getElementById('total-sum2');
+
+// Initialize product prices array
+const productPricesArr2 = [40, 15, 18, 40];
+
+// Initialize total sum
+let currentTotalSum2 = 0;
+
+// Add event listener to submit button
+submitBtn2.addEventListener('click', () => {
+    const enteredNumber2 = Number(numberInput2.value);
+
+    // Calculate product prices
+    for (let i = 0; i < productPricesArr2.length; i++) {
+        const productPrice2 = productPricesArr2[i] * enteredNumber2;
+        productPrices2[i].textContent = productPrice2;
+    }
+
+    // Reset total sum and activate buttons
+    currentTotalSum2 = 0;
+    totalSum2.textContent = currentTotalSum2;
+    for (let i = 0; i < activateBtns2.length; i++) {
+        activateBtns2[i].textContent = 'დამატება';
+        activateBtns2[i].disabled = false;
+    }
+
+});
+
+// Add event listeners to activate buttons
+for (let i = 0; i < activateBtns2.length; i++) {
+    activateBtns2[i].addEventListener('click', () => {
+        const productPrice2 = Number(productPrices2[i].textContent);
+        const btnText2 = activateBtns2[i].textContent;
+
+        if (btnText2 === 'დამატება') {
+            activateBtns2[i].style.backgroundColor = "red";
+            activateBtns2[i].textContent = 'გამოკლება';
+            currentTotalSum2 += productPrice2;
+            totalSum2.textContent = currentTotalSum2;
+        } else {
+            activateBtns2[i].style.backgroundColor = "green";
+            activateBtns2[i].textContent = 'დამატება';
+            currentTotalSum2 -= productPrice2;
+            totalSum2.textContent = currentTotalSum2;
         }
     });
 }
